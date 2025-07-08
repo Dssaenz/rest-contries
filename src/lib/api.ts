@@ -1,5 +1,5 @@
 import { ZERO } from "@/types/constants";
-import { Country } from "@/types/country";
+import { Country, ICountryDetail } from "@/types/country";
 
 const BASE_URL = "https://restcountries.com/v3.1";
 
@@ -22,16 +22,28 @@ const fetchAllCountries = async (): Promise<Country[]> => {
 /**
  * Find items by keyword and site
  * @param {string} code
- * @return {*}  {Promise<Country>}
+ * @return {*}  {Promise<Country | null>}
  */
-const fetchCountryByCode = async (code: string): Promise<Country> => {
-  const response = await fetch(`${BASE_URL}/alpha/${code}`);
+const fetchCountryByCode = async (
+  code: string
+): Promise<ICountryDetail | null> => {
+  const fields =
+    "name,flags,region,subregion,capital,population,cca3,tld,currencies,languages,borders";
 
-  if (!response.ok)
-    throw new Error(`Error to load country with the code ${code}`);
+  try {
+    const response = await fetch(
+      `https://restcountries.com/v3.1/alpha?codes=${code}&fields=${fields}`
+    );
 
-  const data = await response.json();
-  return data[ZERO];
+    if (!response.ok)
+      throw new Error(`Error to load country with the code ${code}`);
+
+    const data = await response.json();
+    return data[ZERO];
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };
 
 export const api = {
