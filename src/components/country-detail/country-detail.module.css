@@ -33,16 +33,14 @@
   line-height: 1.6;
 }
 
-.info h1 {
-  margin: 2rem 0;
-}
 
 .textDetails {
   display: flex;
+  flex-direction: column;
 }
 
 .sectionDetails {
-  margin: 0 6rem 0 0;
+  margin: 2.5rem 0 0 0;
 }
 
 .sectionDetails p {
@@ -57,7 +55,7 @@
 
 .borderCountries {
   margin-top: 4rem;
-  display: flex;
+  display: column;
   align-items: center;
 }
 
@@ -74,22 +72,39 @@
   margin-left: 12px;
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+  aspect-ratio: 4 / 3;
+  margin: 0 auto;
+}
+
 @media (min-width: 1000px) {
   .container {
     flex-direction: row;
+    justify-items: center;
   }
 
   .info {
     margin-left: 2rem;
   }
-}
 
-@media (min-width: 720px) {
-  .container {
+  .textDetails {
+    display: flex;
     flex-direction: row;
   }
 
-  .info {
-    margin-left: 2rem;
+  .sectionDetails {
+    margin: 0 6rem 0 0;
+  }
+
+  .info h1 {
+    margin: 2rem 0;
+  }
+
+  .borderCountries {
+    display: flex;
+    flex-direction: row;
   }
 }

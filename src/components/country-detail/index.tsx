@@ -45,6 +45,8 @@ const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
           alt={country.flags.alt || `Flag of ${country.name.common}`}
           width={570}
           height={410}
+          style={{ width: "100%", height: "auto", maxWidth: "570px" }}
+          priority
         />
 
         <section className={styles.info}>

@@ -3,17 +3,19 @@ import { notFound } from "next/navigation";
 import { CountryDetail } from "@/components";
 
 import { api } from "@/lib/api";
+import { use } from "react";
 
-type PageProps = {
-  params: { country: string };
+type CountryPageProps = {
+  params: Promise<{ country: string }>;
 };
 
-async function CountryPage({ params }: PageProps) {
-  const country = await api.fetchCountryByCode(params.country);
+function CountryPage({ params }: CountryPageProps) {
+  const { country } = use(params);
+  const responseCountry = use(api.fetchCountryByCode(country));
 
-  if (!country) return notFound();
+  if (!country || !responseCountry) return notFound();
 
-  return <CountryDetail country={country} />;
+  return <CountryDetail country={responseCountry} />;
 }
 
 export default CountryPage;
