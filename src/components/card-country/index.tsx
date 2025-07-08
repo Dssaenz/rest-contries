@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 import { Country } from "@/types/country";
@@ -10,7 +11,7 @@ type CardCountryProps = {
 };
 
 const CardCountry: FC<CardCountryProps> = ({ country }) => (
-  <div className={styles.card}>
+  <Link href={`/${country.cca3}`} className={styles.card}>
     <Image
       src={country.flags.png}
       alt={country.flags.alt || `Flag of ${country.name.common}`}
@@ -33,7 +34,7 @@ const CardCountry: FC<CardCountryProps> = ({ country }) => (
         <strong>Capital:</strong> {country.capital?.[0]}
       </p>
     </div>
-  </div>
+  </Link>
 );
 
 export default CardCountry;
