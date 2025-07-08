@@ -3,9 +3,13 @@ import Image from "next/image";
 
 import { Country } from "@/types/country";
 
-import styles from "./CardCountry.module.css";
+import styles from "./card-country.module.css";
 
-const CardCountry: FC<{ country: Country }> = ({ country }) => (
+type CardCountryProps = {
+  country: Country;
+};
+
+const CardCountry: FC<CardCountryProps> = ({ country }) => (
   <div className={styles.card}>
     <Image
       src={country.flags.png}

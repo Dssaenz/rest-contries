@@ -5,7 +5,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
-  background-color: white;
+  background-color: var(--input-bg);
   transition: transform 0.2s ease;
 }
 
@@ -25,13 +25,13 @@
 }
 
 .title {
-  color: black;
+  color: var(--text-color);
   font-size: 1.2rem;
   margin: 0 0 1rem 0;
 }
 
 .text {
   margin-bottom: 5px;
-  color: black;
+  color: var(--text-color);
   font-size: 13px;
 }

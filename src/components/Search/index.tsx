@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FC } from "react";
 
-import styles from "./Search.module.css";
+import styles from "./search.module.css";
 
 type SearchProps = {
   value: string;
@@ -10,9 +10,8 @@ type SearchProps = {
 };
 
 const Search: FC<SearchProps> = ({ value, onChange }) => {
-  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value);
-  };
 
   return (
     <div className={styles.wrapper}>

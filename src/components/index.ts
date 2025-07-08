@@ -1,8 +1,8 @@
-import CardCountry from "./CardCountry/CardCountry";
-import Search from "./Search/Search";
-import Navbar from "./Navbar/Navbar";
-import RegionFilter from "./RegionFilter/RegionFilter";
-import Loader from "./Loader/Loader";
-import EmptyState from "./EmptyState/EmptyState";
+import CardCountry from "./card-country";
+import Search from "./search";
+import Navbar from "./navbar";
+import RegionFilter from "./region-filter";
+import Loader from "./loader";
+import EmptyState from "./empty-state";
 
 export { CardCountry, Search, Navbar, RegionFilter, Loader, EmptyState };

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./EmptyState.module.css";
+import styles from "./empty-state.module.css";
 
 const EmptyState: FC = () => (
   <div className={styles.emptyWrapper}>

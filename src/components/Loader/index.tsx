@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./Loader.module.css";
+import styles from "./loader.module.css";
 
 const Loader: FC = () => (
   <div className={styles.loaderWrapper}>

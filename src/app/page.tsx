@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { fetchAllCountries } from "@/lib/api";
+import { api } from "@/lib/api";
 
 import {
-  CardCountry,
-  EmptyState,
   Loader,
-  RegionFilter,
   Search,
+  EmptyState,
+  CardCountry,
+  RegionFilter,
 } from "@/components";
 
+import { ZERO } from "@/types/constants";
 import { Country } from "@/types/country";
 
 import "./globals.css";
@@ -36,7 +37,7 @@ function Home() {
 
   const getCountries = async () => {
     try {
-      const data = await fetchAllCountries();
+      const data = await api.fetchAllCountries();
       setCountries(data);
     } catch (error) {
       console.error(error);
@@ -53,15 +54,12 @@ function Home() {
     <main className="container">
       <div className="filters">
         <Search value={search} onChange={setSearch} />
-        <RegionFilter
-          selectedRegion={selectedRegion}
-          onChange={setSelectedRegion}
-        />
+        <RegionFilter selected={selectedRegion} onChange={setSelectedRegion} />
       </div>
 
       {isLoading ? (
         <Loader />
-      ) : filteredCountries.length === 0 ? (
+      ) : filteredCountries.length === ZERO ? (
         <EmptyState />
       ) : (
         <div className="grid">

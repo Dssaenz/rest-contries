@@ -1,5 +1,5 @@
 export interface Country {
-  name: { common: string };
+  name: { common: string; official: string };
   flags: { png: string; alt?: string };
   region: string;
   subregion?: string;
