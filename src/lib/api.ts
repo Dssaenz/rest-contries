@@ -1,0 +1,25 @@
+import { Country } from "@/types/country";
+
+const BASE_URL = "https://restcountries.com/v3.1";
+
+export const fetchAllCountries = async (): Promise<Country[]> => {
+  const response = await fetch(
+    `${BASE_URL}/all?fields=flags,name,region,population,cca3`
+  );
+
+  if (!response.ok) throw new Error("Error to load list of countries");
+
+  const data = await response.json();
+
+  return data;
+};
+
+export const fetchCountryByCode = async (code: string): Promise<Country> => {
+  const response = await fetch(`${BASE_URL}/alpha/${code}`);
+
+  if (!response.ok)
+    throw new Error(`Error to load country with the code ${code}`);
+
+  const data = await response.json();
+  return data[0];
+};

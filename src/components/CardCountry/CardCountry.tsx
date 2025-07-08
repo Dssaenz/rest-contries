@@ -1,0 +1,35 @@
+import { FC } from "react";
+import Image from "next/image";
+
+import { Country } from "@/types/country";
+
+import styles from "./CardCountry.module.css";
+
+const CardCountry: FC<{ country: Country }> = ({ country }) => (
+  <div className={styles.card}>
+    <Image
+      src={country.flags.png}
+      alt={country.flags.alt || `Flag of ${country.name.common}`}
+      width={320}
+      height={180}
+      className={styles.flag}
+      priority
+    />
+    <div className={styles.info}>
+      <p className={styles.title}>
+        <strong>{country.name.common}</strong>
+      </p>
+      <p className={styles.text}>
+        <strong>Population:</strong> {country.population.toLocaleString()}
+      </p>
+      <p className={styles.text}>
+        <strong>Region:</strong> {country.region}
+      </p>
+      <p className={styles.text}>
+        <strong>Capital:</strong> {country.capital?.[0]}
+      </p>
+    </div>
+  </div>
+);
+
+export default CardCountry;

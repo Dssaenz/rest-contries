@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-color, #111517);
+}
+
+.toggle {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color, #111517);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.toggle:hover {
+  opacity: 0.7;
+}

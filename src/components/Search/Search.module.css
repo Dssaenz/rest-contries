@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 1rem 0;
+}
+
+.icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ccc;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  background-color: var(--input-bg, white);
+  color: var(--text-color, #111517);
+  font-size: 0.9rem;
+}
+
+.input::placeholder {
+  color: #999;
+}
