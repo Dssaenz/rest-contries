@@ -13,7 +13,7 @@ App to explore detailed information about countries around the world using [rest
 
 - React frontend [https://rest-countries-hhv6.vercel.app/](https://rest-countries-hhv6.vercel.app/)
 
-# 🔥 Features!
+# Features!
 
 - Dark mode
 - Typescript
