@@ -6,13 +6,8 @@ import { api } from "@/lib/api";
 import { ZERO } from "@/types/constants";
 import { Country } from "@/types/country";
 
-import {
-  CardCountry,
-  EmptyState,
-  Loader,
-  RegionFilter,
-  Search,
-} from "@/components";
+import { CardCountry, EmptyState, Loader, RegionFilter } from "@/components";
+import { Search } from "../components/search";
 
 import "./globals.css";
 
