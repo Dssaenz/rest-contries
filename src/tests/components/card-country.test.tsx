@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
+import CardCountry from "@/components/card-country";
 import { render, screen } from "@testing-library/react";
-
-import { CardCountry } from "@/components";
 
 const mockCountry = {
   name: { common: "Colombia", official: "República de Colombia" },

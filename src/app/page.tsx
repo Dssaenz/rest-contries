@@ -3,16 +3,14 @@ import { useEffect, useMemo, useState } from "react";
 
 import { api } from "@/lib/api";
 
-import {
-  Loader,
-  Search,
-  EmptyState,
-  CardCountry,
-  RegionFilter,
-} from "@/components";
-
 import { ZERO } from "@/types/constants";
 import { Country } from "@/types/country";
+
+import Search from "@/components/search";
+import RegionFilter from "@/components/region-filter";
+import Loader from "@/components/loader";
+import EmptyState from "@/components/empty-state";
+import CardCountry from "@/components/card-country";
 
 import "./globals.css";
 

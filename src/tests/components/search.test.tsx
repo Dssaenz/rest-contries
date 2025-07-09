@@ -1,4 +1,7 @@
-import { Search } from "@/components";
+import "@testing-library/jest-dom";
+
+import Search from "@/components/search";
+
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("Test in <Search /> component.", () => {
