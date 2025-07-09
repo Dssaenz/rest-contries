@@ -1,9 +1,8 @@
-import { use } from "react";
-import { notFound } from "next/navigation";
+import { Suspense, use } from "react";
 
-import { api } from "@/lib/api";
+import { Loader } from "@/components";
 
-import { CountryDetail } from "@/components";
+import CountryWrapper from "./country-wrapper";
 
 type CountryPageProps = {
   params: Promise<{ country: string }>;
@@ -11,11 +10,12 @@ type CountryPageProps = {
 
 function CountryPage({ params }: CountryPageProps) {
   const { country } = use(params);
-  const responseCountry = use(api.fetchCountryByCode(country));
 
-  if (!country || !responseCountry) return notFound();
-
-  return <CountryDetail country={responseCountry} />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <CountryWrapper countryCode={country} />
+    </Suspense>
+  );
 }
 
 export default CountryPage;

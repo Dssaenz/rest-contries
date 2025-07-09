@@ -58,7 +58,7 @@ function Home() {
 
   useEffect(() => {
     getCountries();
-  }, []);
+  }, [getCountries]);
 
   return (
     <main className="container">
