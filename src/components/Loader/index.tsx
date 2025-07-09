@@ -1,9 +1,11 @@
 import { FC } from "react";
 import styles from "./loader.module.css";
 
-export const Loader: FC = () => (
+const Loader: FC = () => (
   <div className={styles.loaderWrapper}>
     <div className={styles.spinner} />
     <p>Loading countries...</p>
   </div>
 );
+
+export default Loader;
