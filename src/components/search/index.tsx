@@ -1,5 +1,4 @@
 "use client";
-
 import { ChangeEvent, FC, memo } from "react";
 
 import styles from "./search.module.css";

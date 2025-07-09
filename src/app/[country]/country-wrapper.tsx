@@ -4,11 +4,11 @@ import { api } from "@/lib/api";
 
 import { CountryDetail } from "@/components";
 
-type CountryWrapperProps = {
+type Props = {
   countryCode: string;
 };
 
-const CountryWrapper = async ({ countryCode }: CountryWrapperProps) => {
+const CountryWrapper = async ({ countryCode }: Props) => {
   const country = await api.fetchCountryByCode(countryCode);
 
   if (!country) return notFound();

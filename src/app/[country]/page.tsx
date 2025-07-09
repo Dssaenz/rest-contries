@@ -1,13 +1,19 @@
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 
 import { Loader } from "@/components";
 
 import CountryWrapper from "./country-wrapper";
 
-function CountryPage({ params }: { params: { country: string } }) {
+type CountryPageProps = {
+  params: Promise<{ country: string }>;
+};
+
+function CountryPage({ params }: CountryPageProps) {
+  const { country } = use(params);
+
   return (
     <Suspense fallback={<Loader />}>
-      <CountryWrapper countryCode={params.country} />
+      <CountryWrapper countryCode={country} />
     </Suspense>
   );
 }
