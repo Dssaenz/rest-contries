@@ -61,15 +61,12 @@ export const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
                 <strong>Population:</strong>{" "}
                 {country.population.toLocaleString()}
               </p>
-
               <p>
                 <strong>Region:</strong> {country.region}
               </p>
-
               <p>
                 <strong>Sub Region:</strong> {country.subregion}
               </p>
-
               <p>
                 <strong>Capital:</strong> {country.capital}
               </p>
