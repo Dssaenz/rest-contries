@@ -4,11 +4,7 @@ import { Loader } from "@/components";
 
 import CountryWrapper from "./country-wrapper";
 
-type CountryPageProps = {
-  params: { country: string };
-};
-
-function CountryPage({ params }: CountryPageProps) {
+function CountryPage({ params }: { params: { country: string } }) {
   return (
     <Suspense fallback={<Loader />}>
       <CountryWrapper countryCode={params.country} />

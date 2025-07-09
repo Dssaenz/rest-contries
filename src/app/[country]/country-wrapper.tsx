@@ -1,15 +1,14 @@
-import { FC } from "react";
 import { notFound } from "next/navigation";
 
 import { api } from "@/lib/api";
 
 import { CountryDetail } from "@/components";
 
-type Props = {
+type CountryWrapperProps = {
   countryCode: string;
 };
 
-const CountryWrapper: FC<Props> = async ({ countryCode }) => {
+const CountryWrapper = async ({ countryCode }: CountryWrapperProps) => {
   const country = await api.fetchCountryByCode(countryCode);
 
   if (!country) return notFound();
