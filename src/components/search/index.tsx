@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, memo } from "react";
 
 import styles from "./search.module.css";
 
@@ -9,7 +9,7 @@ type SearchProps = {
   onChange: (value: string) => void;
 };
 
-export const Search: FC<SearchProps> = ({ value, onChange }) => {
+const MemoizedSearch: FC<SearchProps> = ({ value, onChange }) => {
   const handleInput = (e: ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value);
 
@@ -39,3 +39,5 @@ export const Search: FC<SearchProps> = ({ value, onChange }) => {
     </div>
   );
 };
+
+export const Search = memo(MemoizedSearch);

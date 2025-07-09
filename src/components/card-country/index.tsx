@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ type CardCountryProps = {
   country: Country;
 };
 
-export const CardCountry: FC<CardCountryProps> = ({ country }) => (
+const MemoizedCardCountry: FC<CardCountryProps> = ({ country }) => (
   <Link href={`/${country.cca3}`} className={styles.card}>
     <Image
       src={country.flags.png}
@@ -37,3 +37,5 @@ export const CardCountry: FC<CardCountryProps> = ({ country }) => (
     </div>
   </Link>
 );
+
+export const CardCountry = memo(MemoizedCardCountry);
