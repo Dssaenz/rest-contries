@@ -7,11 +7,11 @@ import { ZERO } from "@/types/constants";
 import { Country } from "@/types/country";
 
 import {
-  CardCountry,
-  EmptyState,
-  Loader,
-  RegionFilter,
   Search,
+  EmptyState,
+  CardCountry,
+  RegionFilter,
+  SkeletonCard,
 } from "@/components";
 
 import "./globals.css";
@@ -34,7 +34,13 @@ function Home() {
     });
   }, [search, selectedRegion, countries]);
 
-  const renderLoader = isLoading ? <Loader /> : null;
+  const renderLoader = isLoading ? (
+    <div className="grid">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <SkeletonCard key={index} />
+      ))}
+    </div>
+  ) : null;
 
   const renderEmptyState =
     !isLoading && filteredCountries.length === ZERO ? <EmptyState /> : null;
