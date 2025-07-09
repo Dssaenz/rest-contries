@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import Search from "@/components/search";
+import { Search } from "@/components";
 
 import { render, screen, fireEvent } from "@testing-library/react";
 

@@ -26,10 +26,13 @@
         "name": "next"
       }
     ],
+    "baseUrl": "src/",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/components": ["components"],
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/types/*": ["types/*"],
+      "@/test/*": ["test/*"],
     }
   },
   "include": [

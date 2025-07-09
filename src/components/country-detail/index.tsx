@@ -11,7 +11,7 @@ type CountryDetailProps = {
   country: ICountryDetail;
 };
 
-const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
+export const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
   const formatCurrencies = () =>
     country.currencies
       ? Object.values(country.currencies)
@@ -96,5 +96,3 @@ const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
     </main>
   );
 };
-
-export default CountryDetail;

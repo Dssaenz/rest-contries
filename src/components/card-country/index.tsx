@@ -10,7 +10,7 @@ type CardCountryProps = {
   country: Country;
 };
 
-const CardCountry: FC<CardCountryProps> = ({ country }) => (
+export const CardCountry: FC<CardCountryProps> = ({ country }) => (
   <Link href={`/${country.cca3}`} className={styles.card}>
     <Image
       src={country.flags.png}
@@ -36,5 +36,3 @@ const CardCountry: FC<CardCountryProps> = ({ country }) => (
     </div>
   </Link>
 );
-
-export default CardCountry;

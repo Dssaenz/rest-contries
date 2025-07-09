@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import CountryDetail from "@/components/country-detail";
+import { CountryDetail } from "@/components";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("next/image", () => ({

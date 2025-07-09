@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import EmptyState from "@/components/empty-state";
+import { EmptyState } from "@/components";
 import { render, screen } from "@testing-library/react";
 
 describe("Test in <EmptyState /> component.", () => {

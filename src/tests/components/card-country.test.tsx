@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import CardCountry from "@/components/card-country";
+import { CardCountry } from "@/components";
 import { render, screen } from "@testing-library/react";
 
 const mockCountry = {
