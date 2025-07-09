@@ -1,6 +1,7 @@
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { Navbar } from "@/components";
+import Navbar from "@/components/navbar";
 
 import { useDarkMode } from "@/hooks/useDarkMode";
 

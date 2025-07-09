@@ -1,9 +1,9 @@
+import { use } from "react";
 import { notFound } from "next/navigation";
 
-import { CountryDetail } from "@/components";
-
 import { api } from "@/lib/api";
-import { use } from "react";
+
+import CountryDetail from "@/components/country-detail";
 
 type CountryPageProps = {
   params: Promise<{ country: string }>;

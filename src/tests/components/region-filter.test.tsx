@@ -1,4 +1,7 @@
-import { RegionFilter } from "@/components";
+import "@testing-library/jest-dom";
+
+import RegionFilter from "@/components/region-filter";
+
 import { render, screen, fireEvent } from "@testing-library/react";
 
 describe("Test in <RegionFilter /> component.", () => {
