@@ -9,7 +9,7 @@ type SearchProps = {
   onChange: (value: string) => void;
 };
 
-const Search: FC<SearchProps> = ({ value, onChange }) => {
+export const Search: FC<SearchProps> = ({ value, onChange }) => {
   const handleInput = (e: ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value);
 
@@ -39,5 +39,3 @@ const Search: FC<SearchProps> = ({ value, onChange }) => {
     </div>
   );
 };
-
-export default Search;

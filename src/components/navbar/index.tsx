@@ -6,7 +6,7 @@ import { useDarkMode } from "@/hooks/useDarkMode";
 
 import styles from "./navbar.module.css";
 
-const Navbar: FC = () => {
+export const Navbar: FC = () => {
   const { isDark, toggleTheme } = useDarkMode();
 
   return (
@@ -20,5 +20,3 @@ const Navbar: FC = () => {
     </header>
   );
 };
-
-export default Navbar;
