@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import Loader from "@/components/loader";
+import { Loader } from "@/components";
 import { render, screen } from "@testing-library/react";
 
 describe("Test in <Loader /> component.", () => {

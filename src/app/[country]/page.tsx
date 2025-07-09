@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { api } from "@/lib/api";
 
-import CountryDetail from "@/components/country-detail";
+import { CountryDetail } from "@/components";
 
 type CountryPageProps = {
   params: Promise<{ country: string }>;

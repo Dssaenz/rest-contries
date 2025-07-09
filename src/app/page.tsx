@@ -1,16 +1,18 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { api } from "@/lib/api";
 
 import { ZERO } from "@/types/constants";
 import { Country } from "@/types/country";
 
-import Search from "@/components/search";
-import RegionFilter from "@/components/region-filter";
-import Loader from "@/components/loader";
-import EmptyState from "@/components/empty-state";
-import CardCountry from "@/components/card-country";
+import {
+  CardCountry,
+  EmptyState,
+  Loader,
+  RegionFilter,
+  Search,
+} from "@/components";
 
 import "./globals.css";
 
@@ -32,7 +34,12 @@ function Home() {
     });
   }, [search, selectedRegion, countries]);
 
-  const getCountries = async () => {
+  const renderLoader = isLoading ? <Loader /> : null;
+
+  const renderEmptyState =
+    isLoading && filteredCountries.length === ZERO ? <EmptyState /> : null;
+
+  const getCountries = useCallback(async () => {
     try {
       const data = await api.fetchAllCountries();
       setCountries(data);
@@ -41,7 +48,7 @@ function Home() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     getCountries();
@@ -53,18 +60,13 @@ function Home() {
         <Search value={search} onChange={setSearch} />
         <RegionFilter selected={selectedRegion} onChange={setSelectedRegion} />
       </div>
-
-      {isLoading ? (
-        <Loader />
-      ) : filteredCountries.length === ZERO ? (
-        <EmptyState />
-      ) : (
-        <div className="grid">
-          {filteredCountries.map((country) => (
-            <CardCountry key={country.cca3} country={country} />
-          ))}
-        </div>
-      )}
+      {renderLoader}
+      {renderEmptyState}
+      <div className="grid">
+        {filteredCountries.map((country) => (
+          <CardCountry key={country.cca3} country={country} />
+        ))}
+      </div>
     </main>
   );
 }

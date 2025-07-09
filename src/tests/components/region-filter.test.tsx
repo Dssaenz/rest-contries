@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import RegionFilter from "@/components/region-filter";
+import { RegionFilter } from "@/components";
 
 import { render, screen, fireEvent } from "@testing-library/react";
 
