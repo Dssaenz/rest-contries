@@ -18,7 +18,7 @@
 }
 
 .backButton > p {
-  font-size: 22px;
+  font-size: 16px;
   margin-right: 10px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .info {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -49,6 +49,15 @@
 }
 
 .tld p {
+  margin: 0 0 8px 0;
+  color: var(--text-color);
+}
+
+.sectionLastDetails {
+  margin: 2.5rem 0 0 0;
+}
+
+.sectionLastDetails p {
   margin: 0 0 8px 0;
   color: var(--text-color);
 }
@@ -97,6 +106,10 @@
 
   .sectionDetails {
     margin: 0 6rem 0 0;
+  }
+
+  .sectionLastDetails {
+    margin: 0;
   }
 
   .info h1 {
