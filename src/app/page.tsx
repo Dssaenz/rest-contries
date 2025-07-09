@@ -37,7 +37,7 @@ function Home() {
   const renderLoader = isLoading ? <Loader /> : null;
 
   const renderEmptyState =
-    isLoading && filteredCountries.length === ZERO ? <EmptyState /> : null;
+    !isLoading && filteredCountries.length === ZERO ? <EmptyState /> : null;
 
   const getCountries = useCallback(async () => {
     try {

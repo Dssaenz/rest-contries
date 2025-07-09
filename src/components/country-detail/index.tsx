@@ -47,6 +47,7 @@ export const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
           height={410}
           style={{ width: "100%", height: "auto", maxWidth: "570px" }}
           priority
+          draggable={false}
         />
 
         <section className={styles.info}>
@@ -72,9 +73,9 @@ export const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
                 <strong>Capital:</strong> {country.capital}
               </p>
             </div>
-            <div className={styles.sectionDetails}>
+            <div className={styles.sectionLastDetails}>
               <p>
-                <strong>Top Level Domain:</strong>
+                <strong>Top Level Domain: </strong>
                 {country.tld?.join(", ") || NA}
               </p>
               <p>

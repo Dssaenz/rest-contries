@@ -19,6 +19,7 @@ export const CardCountry: FC<CardCountryProps> = ({ country }) => (
       height={180}
       className={styles.flag}
       priority
+      draggable={false}
     />
     <div className={styles.info}>
       <p className={styles.title}>
