@@ -11,7 +11,7 @@ type RegionFilterProps = {
 
 const regions = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
 
-export const RegionFilter: FC<RegionFilterProps> = ({ selected, onChange }) => {
+const RegionFilter: FC<RegionFilterProps> = ({ selected, onChange }) => {
   return (
     <div className={styles.selectWrapper}>
       <select
@@ -28,3 +28,5 @@ export const RegionFilter: FC<RegionFilterProps> = ({ selected, onChange }) => {
     </div>
   );
 };
+
+export default RegionFilter;
