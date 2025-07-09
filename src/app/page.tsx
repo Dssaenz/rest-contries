@@ -48,7 +48,10 @@ function Home() {
   const getCountries = useCallback(async () => {
     try {
       const data = await api.fetchAllCountries();
-      setCountries(data);
+      const sortCountries = data.sort((a, b) =>
+        a.name.common.localeCompare(b.name.common)
+      );
+      setCountries(sortCountries);
     } catch (error) {
       console.error(error);
     } finally {

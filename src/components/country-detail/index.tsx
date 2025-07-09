@@ -58,7 +58,8 @@ export const CountryDetail: FC<CountryDetailProps> = ({ country }) => {
                 <strong>Native Name:</strong> {country.name.official || ""}
               </p>
               <p>
-                <strong>Population:</strong> {country.population}
+                <strong>Population:</strong>{" "}
+                {country.population.toLocaleString()}
               </p>
 
               <p>
