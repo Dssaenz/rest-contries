@@ -3,7 +3,7 @@ import styles from "./loader.module.css";
 
 const Loader: FC = () => (
   <div className={styles.loaderWrapper}>
-    <div className={styles.spinner}></div>
+    <div className={styles.spinner} />
     <p>Loading countries...</p>
   </div>
 );
