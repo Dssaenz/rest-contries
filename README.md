@@ -11,13 +11,13 @@ App to explore detailed information about countries around the world using [rest
 
 # Demo!
 
-- React frontend [https://rest-countries-hhv6.vercel.app/](https://rest-countries-hhv6.vercel.app/)
+- Next frontend [https://rest-countries-hhv6.vercel.app/](https://rest-countries-hhv6.vercel.app/)
 
 # Features!
 
 - Dark mode
 - Typescript
-- Test components with Jest
+- Test components with Jest and React Testing Library
 - Frontend deployed in vercel.com
 
 ### Installation
@@ -26,7 +26,7 @@ Requires [Node.js](https://nodejs.org/) v22.17.0 to run.
 
 Install the dependencies and devDependencies and start the server.
 
-##### Frontend
+### Frontend
 
 ```sh
 $ cd rest-countries
@@ -34,7 +34,7 @@ $ npm install
 $ npm run dev
 ```
 
-##### Architecture
+### Architecture
 
 - **Modularity:** Each component has its own styles and logic.
 - **Reusability:** Each component is designed to be reusable.
@@ -42,3 +42,19 @@ $ npm run dev
 - **Data layer:** Centralized functions for API calls.
 - **Strict typing:** TypeScript is used in the entire project.
 - **Testing:** Unit tests for components and hooks using Jest and React Testing Library.
+
+### Screenshots
+
+#### List Of Countries
+
+![Screenshot-home-light-desktop](./src/assets/screenshots/Screenshot-home-light-desktop.png)
+![Screenshot-home-dark-desktop](./src/assets/screenshots/Screenshot-home-dark-desktop.png)
+![Screenshot-home-light-mobile](./src/assets/screenshots/Screenshot-home-light-mobile.png)
+![Screenshot-home-dark-mobile](./src/assets/screenshots/Screenshot-home-dark-mobile.png)
+
+#### Country Detail
+
+![Screenshot-detail-light-desktop](./src/assets/screenshots/Screenshot-detail-light-desktop.png)
+![Screenshot-detail-dark-desktop](./src/assets/screenshots/Screenshot-detail-dark-desktop.png)
+![Screenshot-detail-light-mobile](./src/assets/screenshots/Screenshot-detail-light-mobile.png)
+![Screenshot-detail-dark-mobile](./src/assets/screenshots/Screenshot-detail-dark-mobile.png)
