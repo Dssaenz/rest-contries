@@ -6,3 +6,4 @@ export * from "./loader";
 export * from "./empty-state";
 export * from "./country-detail";
 export * from "./skeleton-card";
+export * from "./skeleton-country-detail";

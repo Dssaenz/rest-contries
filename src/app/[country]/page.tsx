@@ -1,6 +1,6 @@
 import { Suspense, use } from "react";
 
-import { Loader } from "@/components";
+import { SkeletonCountryDetail } from "@/components";
 
 import CountryWrapper from "./country-wrapper";
 
@@ -12,7 +12,7 @@ function CountryPage({ params }: CountryPageProps) {
   const { country } = use(params);
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<SkeletonCountryDetail />}>
       <CountryWrapper countryCode={country} />
     </Suspense>
   );
