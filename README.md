@@ -33,3 +33,12 @@ $ cd rest-countries
 $ npm install
 $ npm run dev
 ```
+
+##### Architecture
+
+- **Modularity:** Each component has its own styles and logic.
+- **Reusability:** Each component is designed to be reusable.
+- **Logic encapsulation:** Achieved through custom hooks.
+- **Data layer:** Centralized functions for API calls.
+- **Strict typing:** TypeScript is used in the entire project.
+- **Testing:** Unit tests for components and hooks using Jest and React Testing Library.
